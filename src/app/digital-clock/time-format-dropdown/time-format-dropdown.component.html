@@ -1,0 +1,4 @@
+<select name="timeFormat" id="time-format-select" [(ngModel)]="selectedFormat" (change)="onFormatSelected()">
+    <option selected>Select time format</option>
+    <option *ngFor="let format of formats" [value]="format">{{format}}</option>
+</select>

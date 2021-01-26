@@ -1,0 +1,22 @@
+.digit-box-holder {
+    border: 1px solid black; 
+    width: 200px; 
+    background-color: rgba(203, 44, 43, 0.2);
+
+    h3 {
+        margin: 0 auto; 
+        width: fit-content;
+    }
+
+    .time-box {
+        margin: 0 auto; 
+        width: fit-content;
+
+        .time {
+            font-family: 'ZCOOL QingKe HuangYou', cursive; 
+            font-size: 80px; 
+            padding: 40px; 
+            color: #cb2c2b
+        }
+    }
+}
