@@ -13,14 +13,18 @@ export class TimeFormatDropdownComponent implements OnInit {
   @Input()
   formatType: string;
 
+  @Input()
+  defaultText: string;
+
   @Output()
   formatSelected: EventEmitter<TimeFormatData> = new EventEmitter<TimeFormatData>();
 
-  selectedFormat: string = 'Select time format';
+  selectedFormat: string;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.selectedFormat = this.defaultText;
   }
 
   onFormatSelected() {

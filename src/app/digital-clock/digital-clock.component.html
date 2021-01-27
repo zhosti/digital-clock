@@ -1,13 +1,16 @@
 <div class="digital-clock-box">
-    <div class="digital-clock-wrapper">
-        <div class="format-dropdown-holder">
-            <app-time-format-dropdown [formats]="timeFormats" [formatType]="'hour'"
-                (formatSelected)="onFormatSlected($event)">
-            </app-time-format-dropdown>
-            <app-time-format-dropdown [formats]="minuteFormats" (formatSelected)="onFormatSlected($event)">
-            </app-time-format-dropdown>
-        </div>
+    <div class="format-dropdown-holder">
+        <h2>Digital Clock</h2>
 
+        <app-time-format-dropdown [formats]="timeFormats" [formatType]="'hour'" [defaultText]="'Hour Format'"
+            (formatSelected)="onFormatSlected($event)">
+        </app-time-format-dropdown>
+        <app-time-format-dropdown [formats]="minuteFormats" (formatSelected)="onFormatSlected($event)"
+            [defaultText]="'Minute Format'">
+        </app-time-format-dropdown>
+    </div>
+
+    <div class="digital-clock-wrapper">
         <div class="digital-clock-holder">
             <app-digit-box [timeUnit]="time.getHours()" [timeFormat]="hourFormat" [formatType]="'hour'"
                 timeUnitName="HOUR">
@@ -20,13 +23,13 @@
 
             <div class="am-pm-holder">
                 <div class="am">
-                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'AM' ? 'red' : 'white'}"
+                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'AM' ? '#cb2c2b' : '#4C4C59'}"
                         class="dot"></span>
                     <span>AM</span>
 
                 </div>
                 <div class="pm">
-                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'PM' ? 'red' : 'white'}"
+                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'PM' ? '#cb2c2b' : '#4C4C59'}"
                         class="dot"></span>
                     <span>PM</span>
                 </div>
@@ -34,4 +37,5 @@
         </div>
 
     </div>
+    <div class="version-text">Version 00:00</div>
 </div>

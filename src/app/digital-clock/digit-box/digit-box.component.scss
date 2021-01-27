@@ -1,7 +1,7 @@
 h3 {
     color: #ffffff;
     font-size: 20px;
-    margin: 0 auto; 
+    margin: 0 auto;
     width: fit-content;
 }
 
@@ -10,16 +10,14 @@ h3 {
     border-radius: 15px;
     width: 150px; 
     background-color: rgba(203, 44, 43, 0.2);
-    
+    margin-top: 1em;
     .time-box {
         margin: 0 auto; 
         width: fit-content;
-
     
         .time {
             font-family: 'ZCOOL QingKe HuangYou', cursive; 
-            font-size: 80px; 
-            padding: 10px; 
+            font-size: 100px; 
             color: #cb2c2b
         }
     }
