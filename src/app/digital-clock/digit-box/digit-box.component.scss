@@ -1,21 +1,25 @@
+h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin: 0 auto; 
+    width: fit-content;
+}
+
 .digit-box-holder {
-    border: 1px solid black; 
-    width: 200px; 
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    width: 150px; 
     background-color: rgba(203, 44, 43, 0.2);
-
-    h3 {
-        margin: 0 auto; 
-        width: fit-content;
-    }
-
+    
     .time-box {
         margin: 0 auto; 
         width: fit-content;
 
+    
         .time {
             font-family: 'ZCOOL QingKe HuangYou', cursive; 
             font-size: 80px; 
-            padding: 40px; 
+            padding: 10px; 
             color: #cb2c2b
         }
     }

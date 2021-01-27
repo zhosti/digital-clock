@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormatType } from "../enums/formatType";
+import { TimeFormat } from "../enums/timeFormat";
 
 @Component({
   selector: "app-digital-clock",
@@ -31,5 +32,16 @@ export class DigitalClockComponent implements OnInit {
     time.formatType === FormatType.Hour ? 
     this.hourFormat = time.format :
     this.minuteFormat = time.format;
+  }
+
+  isTwelveHourFormat() {
+    if (
+      (this.hourFormat === TimeFormat.LeadingZero12Hours ||
+      this.hourFormat === TimeFormat.NoLeadingZero12Hours)
+    ) {
+      return this.time.getHours() >= 12 ? 'PM' : 'AM';
+    } else {
+      return '';
+    }
   }
 }

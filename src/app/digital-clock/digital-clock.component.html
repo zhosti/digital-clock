@@ -1,12 +1,37 @@
-<app-time-format-dropdown [formats]="timeFormats" [formatType]="'hour'" (formatSelected)="onFormatSlected($event)">
-</app-time-format-dropdown>
-<app-time-format-dropdown [formats]="minuteFormats" (formatSelected)="onFormatSlected($event)">
-</app-time-format-dropdown>
+<div class="digital-clock-box">
+    <div class="digital-clock-wrapper">
+        <div class="format-dropdown-holder">
+            <app-time-format-dropdown [formats]="timeFormats" [formatType]="'hour'"
+                (formatSelected)="onFormatSlected($event)">
+            </app-time-format-dropdown>
+            <app-time-format-dropdown [formats]="minuteFormats" (formatSelected)="onFormatSlected($event)">
+            </app-time-format-dropdown>
+        </div>
 
-<div class="digital-clock-holder">
-    <app-digit-box [timeUnit]="time.getHours()" [timeFormat]="hourFormat" [formatType]="'hour'" timeUnitName="HOUR">
-    </app-digit-box>
-    <app-digit-box [timeUnit]="time.getMinutes()" [timeFormat]="minuteFormat" [formatType]="'minute'"
-        timeUnitName="MINUTE"></app-digit-box>
-    <app-digit-box [timeUnit]="time.getSeconds()" timeUnitName="SECOND"></app-digit-box>
+        <div class="digital-clock-holder">
+            <app-digit-box [timeUnit]="time.getHours()" [timeFormat]="hourFormat" [formatType]="'hour'"
+                timeUnitName="HOUR">
+            </app-digit-box>
+            <span class="double-dot"></span>
+            <app-digit-box [timeUnit]="time.getMinutes()" [timeFormat]="minuteFormat" [formatType]="'minute'"
+                timeUnitName="MINUTE"></app-digit-box>
+            <span class="double-dot"></span>
+            <app-digit-box [timeUnit]="time.getSeconds()" timeUnitName="SECOND"></app-digit-box>
+
+            <div class="am-pm-holder">
+                <div class="am">
+                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'AM' ? 'red' : 'white'}"
+                        class="dot"></span>
+                    <span>AM</span>
+
+                </div>
+                <div class="pm">
+                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'PM' ? 'red' : 'white'}"
+                        class="dot"></span>
+                    <span>PM</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
