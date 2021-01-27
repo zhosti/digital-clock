@@ -8,17 +8,20 @@ h3 {
 .digit-box-holder {
     border: 1px solid #ffffff;
     border-radius: 15px;
-    width: 150px; 
+    width: 9vw; 
     background-color: rgba(203, 44, 43, 0.2);
     margin-top: 1em;
+
     .time-box {
         margin: 0 auto; 
         width: fit-content;
     
         .time {
             font-family: 'ZCOOL QingKe HuangYou', cursive; 
-            font-size: 100px; 
-            color: #cb2c2b
+            font-size: calc(8px + (160 - 8) * ((100vw - 300px) / (2048 - 300)));
+            color: #cb2c2b;
+            line-height: 1;
+            padding: 10px;
         }
     }
 }

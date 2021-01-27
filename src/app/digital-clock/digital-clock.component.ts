@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormatType } from "../enums/formatType";
+import { PeriodType } from "../enums/periodType";
 import { TimeFormat } from "../enums/timeFormat";
 
 @Component({
@@ -8,13 +9,25 @@ import { TimeFormat } from "../enums/timeFormat";
   styleUrls: ["./digital-clock.component.scss"],
 })
 export class DigitalClockComponent implements OnInit {
-  time = new Date();
+  date = new Date();
 
   timeFormats = ["h", "hh", "H", "HH"];
   minuteFormats = ["m", "mm"];
 
   hourFormat: string = 'h';
   minuteFormat: string = 'm';
+
+  public get hour() {
+    return this.date.getHours();
+  }
+
+  public get minute() {
+    return this.date.getMinutes();
+  }
+
+  public get second() {
+    return this.date.getSeconds();
+  }
 
   constructor() {}
 
@@ -24,7 +37,7 @@ export class DigitalClockComponent implements OnInit {
 
   getCurrentDate() {
     setInterval(() => {
-      this.time = new Date();
+      this.date = new Date();
     }, 1000);
   }
 
@@ -39,7 +52,7 @@ export class DigitalClockComponent implements OnInit {
       (this.hourFormat === TimeFormat.LeadingZero12Hours ||
       this.hourFormat === TimeFormat.NoLeadingZero12Hours)
     ) {
-      return this.time.getHours() >= 12 ? 'PM' : 'AM';
+      return this.date.getHours() >= 12 ? PeriodType.PM : PeriodType.AM;
     } else {
       return '';
     }

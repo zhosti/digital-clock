@@ -12,26 +12,26 @@
 
     <div class="digital-clock-wrapper">
         <div class="digital-clock-holder">
-            <app-digit-box [timeUnit]="time.getHours()" [timeFormat]="hourFormat" [formatType]="'hour'"
+            <app-digit-box [timeUnit]="hour" [timeFormat]="hourFormat" [formatType]="'hour'"
                 timeUnitName="HOUR">
             </app-digit-box>
             <span class="double-dot"></span>
-            <app-digit-box [timeUnit]="time.getMinutes()" [timeFormat]="minuteFormat" [formatType]="'minute'"
+            <app-digit-box [timeUnit]="minute" [timeFormat]="minuteFormat" [formatType]="'minute'"
                 timeUnitName="MINUTE"></app-digit-box>
             <span class="double-dot"></span>
-            <app-digit-box [timeUnit]="time.getSeconds()" timeUnitName="SECOND"></app-digit-box>
+            <app-digit-box [timeUnit]="second" timeUnitName="SECOND"></app-digit-box>
 
             <div class="am-pm-holder">
-                <div class="am">
-                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'AM' ? '#cb2c2b' : '#4C4C59'}"
+                <div class="pm-am">
+                    <span [ngStyle]="{'color': isTwelveHourFormat() === 'AM' ? '#cb2c2b' : '#4C4C59'}"
                         class="dot"></span>
-                    <span>AM</span>
+                    <span class="pm-am-label">AM</span>
 
                 </div>
-                <div class="pm">
-                    <span [ngStyle]="{'backgroundColor': isTwelveHourFormat() === 'PM' ? '#cb2c2b' : '#4C4C59'}"
+                <div class="pm-am">
+                    <span [ngStyle]="{'color': isTwelveHourFormat() === 'PM' ? '#cb2c2b' : '#4C4C59'}"
                         class="dot"></span>
-                    <span>PM</span>
+                    <span class="pm-am-label">PM</span>
                 </div>
             </div>
         </div>
