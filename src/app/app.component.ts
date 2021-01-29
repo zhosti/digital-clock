@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormatType } from './enums/formatType';
 
 @Component({
   selector: 'app-root',

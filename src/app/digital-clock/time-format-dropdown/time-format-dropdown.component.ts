@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { TimeFormatData } from "src/app/models/TimeFormatData";
+import { TimeFormatData } from "../../models/TimeFormatData";
 
 @Component({
   selector: "app-time-format-dropdown",

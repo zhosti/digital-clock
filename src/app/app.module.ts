@@ -3,26 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DigitalClockComponent } from './digital-clock/digital-clock.component';
-import { TimeFormatPipe } from './pipes/time-format.pipe';
 import { FormsModule } from '@angular/forms';
-import { DigitBoxComponent } from './digital-clock/digit-box/digit-box.component';
-import { TimeFormatDropdownComponent } from './digital-clock/time-format-dropdown/time-format-dropdown.component';
+import { DigitalClockModule } from './digital-clock/digital-clock.module';
+import {AngularDigitalClockModule} from 'angular-digital-clock';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DigitalClockComponent,
-    TimeFormatPipe,
-    DigitBoxComponent,
-    TimeFormatDropdownComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularDigitalClockModule,
+    DigitalClockModule,
   ],
-  providers: [TimeFormatPipe],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
