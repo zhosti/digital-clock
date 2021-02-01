@@ -19,7 +19,7 @@
     "@angular/platform-browser": "~11.1.1",
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
-    "angular-digital-clock": "^0.3.3",
+    "angular-digital-clock": "^0.3.4",
     "bootstrap": "^4.6.0",
     "digital-clock-angular-lib": "0.0.2",
     "jquery": "^3.5.1",
